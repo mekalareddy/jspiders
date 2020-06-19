@@ -1,0 +1,35 @@
+package com.jspiders.java;
+
+import java.util.ArrayList;
+
+public class Main 
+{
+
+	public static void main(String[] args)
+	{	   
+	    
+		ArrayList a1=new ArrayList();
+		
+		Employee e1=new Employee(111,"Rakshit",45,"Developer","Raki@gmail.com");
+		Employee e2=new Employee(222,"Kaushik",70000,"Manager","Kaushik@gmail.com");
+		Employee e3=new Employee(333,"Pruthvi",50000,"Manager","Pruthvi@gmail.com");
+		Employee e4=new Employee(444,"Surendra",60000,"Developer","Suri@gmail.com");
+		Employee e5=new Employee(444,"Sagar",80000,"Developer","Sagar@gmail.com");
+		Employee e6=new Employee(444,"Govardhan",30000,"Manager","Gova@gmail.com");
+		
+	    System.out.println(a1.add(e1));
+	    System.out.println(a1.add(e2));
+	    System.out.println(a1.add(e3));
+	    System.out.println(a1.add(e4));
+	    System.out.println(a1.add(e5));
+	    System.out.println(a1.add(e6));
+	    
+	    for(int i=0;i<a1.size();i++)
+	    {
+	    	Object obj=a1.get(i);
+	    	Employee e1=(Employee)obj;
+	    	
+	    }
+	}
+
+}

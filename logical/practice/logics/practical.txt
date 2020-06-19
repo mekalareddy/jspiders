@@ -1,0 +1,3 @@
+perfect number:A number which sum of its divisors is equal to itself.
+Strong number:sUM OF FACTORIAL OF INDIVIDUAL DIGITS IS EQUAL TO THAT NUMBER.
+prime number:which has only 2 factors i.e 1 and itself.

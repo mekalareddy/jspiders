@@ -1,0 +1,27 @@
+class Department 
+{
+	int id;
+	String name;
+	Employee strArr[];
+	int index;
+	Department(int arg1, String arg2,int strength)
+	{
+		id=arg1;
+		name=arg2;
+		strArr=new Employee[strength];
+	}
+
+	void addEmployee(Employee s1)
+	{
+		if(index<strArr.length)
+		{
+			strArr[index++]=s1;
+			System.out.println("Congrates ... Employee Enrolled "+name+" Department");
+		}
+		else
+		{
+			System.out.println("Cannot Enroll");
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.jspiders.Assignments;
+
+import com.jspiders.java.Main;
+
+public class Assignment6 
+{
+	public static void main(String[] args) 
+	{
+		
+		
+	}
+
+}

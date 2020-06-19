@@ -1,0 +1,16 @@
+package com.jspiders.Assignments;
+
+import com.jspiders.java.Main;
+
+import com.mysql.jdbc.Driver;
+
+public class Assignment6 
+{
+	public static void main(String[] args) 
+	{
+		Driver driverRef=new Driver();
+		
+		
+	}
+
+}

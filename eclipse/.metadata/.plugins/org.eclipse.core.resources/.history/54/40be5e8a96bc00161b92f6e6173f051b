@@ -1,0 +1,23 @@
+package com.techM.tech;
+
+import java.util.Scanner;
+
+public class Addition 
+{
+  public static void main(String[] args)
+  {
+	 Scanner sc=new Scanner(System.in);
+	 System.out.println("enter any two integers");
+	 int a=sc.nextInt();
+	 int b=sc.nextInt();
+	 
+	 a=a+b;
+	 b=a-b;
+	 a=a-b;
+	 
+	 System.out.println("After Swapping");
+	 System.out.println("values of a is"+a);
+	 System.out.println("values of b is"+b);
+  }
+	
+}

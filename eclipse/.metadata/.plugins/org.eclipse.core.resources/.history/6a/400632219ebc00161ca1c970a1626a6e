@@ -1,0 +1,32 @@
+package com.techM.tech;
+
+import java.util.Scanner;
+
+public class Palindrome 
+{
+	 public static void main(String[] args)
+	  {
+		 int result=0;
+		 
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("enter a integer");
+		 int num=sc.nextInt();
+		 System.out.println("hii");
+		 
+		 int temp=num;
+		  
+		 System.out.println("bye..");
+		 
+		 while(num>0)
+		 {
+			int remainder =num%10;
+			result = result*10+remainder;
+			int divider = num/10;
+		 }
+		 
+		 if(temp==result)
+		 System.out.println("---------palindrome----------");
+		 else
+		 System.out.println("-----------Not palindrome----------"); 
+	  }
+}

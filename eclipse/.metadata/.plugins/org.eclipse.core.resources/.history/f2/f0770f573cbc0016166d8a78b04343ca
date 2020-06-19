@@ -1,0 +1,25 @@
+package com.jspiders.Assignments;
+
+import java.util.ArrayList;
+
+public class ArrayList 
+{
+	//static ArrayList ar1;
+	
+	/*public static void manager(int eid,String ename,double esal,String edesig,String email)
+	{
+		
+		
+	}*/
+	
+	public static void main(String[] args)
+	{
+	ArrayList ar1=new ArrayList();
+	ar1.add(new Employee(101,"Rakshit",2500.00,"Security","Raki@gmail.com"));
+	ar1.add(101,"Sagar",5000.00,"Developer","Sagar@gmail.com");
+	ar1.add(101,"Govardhan",25000.00,"Manager","Govardhan@gmail.com");
+	ar1.add(101,"Surendra",5000.00,"Developer","Surendra@gmail.com");
+	ar1.add(101,"Kaushik",20000.00,"Manager","Kaushik@gmail.com");
+	ar1.add(101,"Pruthvi",10000.00,"TeamLeader","Pruthvi@gmail.com");
+	}
+}

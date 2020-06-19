@@ -1,0 +1,19 @@
+package com.jspiders.Assignments;
+
+public class Students 
+{
+	int id;
+	String name;
+	double marks;
+	public Students(int Id, String Name, double Marks)
+	{
+		this.id = Id;
+		this.name = Name;
+		this.marks = Marks;
+	}
+	public String toString() 
+	{
+		return " ID Is : " +id+ " NAME Is : " +name+ " MARKS Is : " + marks;
+	}
+	
+}

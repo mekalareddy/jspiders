@@ -1,0 +1,9 @@
+package com.jspiders.java;
+
+public class TreeSet
+{
+	TreeSet ts=new TreeSet();
+	add(new Students(101,"vijay",21.98));
+	
+
+}

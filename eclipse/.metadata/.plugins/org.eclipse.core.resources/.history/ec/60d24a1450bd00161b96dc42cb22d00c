@@ -1,0 +1,25 @@
+package com.jspiders.java;
+
+public class Students 
+{
+	int sid;
+	String name;
+	double marks;
+	public Students(int sid, String Name, double Marks)
+	{
+		this.sid = sid;
+		this.name = Name;
+		this.marks = Marks;
+	}
+	public String toString() 
+	{
+		return " ID Is : " +sid+ " NAME Is : " +name+ " MARKS Is : " + marks;
+	}
+	
+	public int compareTo(Object obj)
+	{
+		int val=this.id-st.id;
+		return val;
+	}
+	
+}

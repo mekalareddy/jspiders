@@ -1,0 +1,66 @@
+package com.jspiders.java;
+
+import java.util.ArrayList;
+
+public class Main 
+{
+	static ArrayList a1;
+	
+	public static void empsal()
+	{
+		for(int i=0;i<a1.size();i++)
+	    {
+	    	Object obj=a1.get(i);
+	    	Employee em1=(Employee)obj;
+			System.out.println("Employee name:"+em1.ename+"Annual Sal:"+em1.esal*12);
+	    }
+	}
+	
+	public static void empid()
+	{
+		for(int i=0;i<a1.size();i++)
+	    {
+	    	Object obj=a1.get(i);
+	    	Employee em1=(Employee)obj;
+			System.out.println("Employee name:"+em1.ename+"EmailId:"+em1.email);
+	    }
+	}
+	
+	public static void manager()
+	{
+		 for(int i=0;i<a1.size();i++)
+		    {
+		    	Object obj=a1.get(i);
+		    	Employee em1=(Employee)obj;
+		    	if(em1.edesig=="Manager")
+				{
+					System.out.println(a1.get(i));
+				}
+		    }
+	}
+
+	public static void main(String[] args)
+	{	   
+	    
+		a1=new ArrayList();
+		
+		Employee e1=new Employee(111,"Rakshit",45,"Developer","Raki@gmail.com");
+		Employee e2=new Employee(222,"Kaushik",70000,"Manager","Kaushik@gmail.com");
+		Employee e3=new Employee(333,"Pruthvi",50000,"Manager","Pruthvi@gmail.com");
+		Employee e4=new Employee(444,"Surendra",60000,"Developer","Suri@gmail.com");
+		Employee e5=new Employee(555,"Sagar",80000,"Developer","Sagar@gmail.com");
+		Employee e6=new Employee(666,"Govardhan",30000,"Manager","Gova@gmail.com");
+		
+	    a1.add(e1);
+	    a1.add(e2);
+	    a1.add(e3);
+	    a1.add(e4);
+	    a1.add(e5);
+	    a1.add(e6);
+	    
+	    manager();
+	    empid();
+	    empsal();
+	}
+
+}

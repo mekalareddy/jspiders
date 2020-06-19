@@ -1,0 +1,519 @@
+class design:
+
+model eg:
+
+
+     classname
+---------------------
+   member variables
+---------------------
+    constructor
+  member functions
+---------------------------
+eg:
+   mobile
+------------------------------
+os:String 
+ram: int
+brandname: Stirng 
+------------------------------
+Mobile(String , int,String )
+voice call: void
+sms(): void
+------------------------------
+
+inheritence concept:
+
+ properties can be inherited from base class r super class to derived class r sub class.
+
+class Demo1{
+---------------
+-------------
+------------
+--------------
+}
+class Demo2 entends Demo1{
+----------
+-----------
+-------
+--------
+}
+
+
+diagram relationship:
+
+Demo1
+-----------
+x:int                    BASE CLASS
+-----------
+test(): void
+------------
+    ^
+    |
+    |
+    |
+    | 
+---------------
+Demo2
+---------------
+y:double                       DERIVED CLASS
+---------------
+disp(): void 
+---------------
+notes:
+
+->a class inheriting properties from another class is known as inheritence.
+->a class inherit from another class by using a keyword EXTENDS.
+the class from where properties are inherited in known as base class or super class.
+the class to which the members are inherited is known as derived class or sub class.
+sub-class inhherits only the non-static properties of super class. if super class is having static properties and private non-static properties then it will not be inherited to sub class.
+whenever sub-class object is created the object will have both sub-class and super class properties.
+TYPES OF INHERITENCE:
+there are 4 types of inheritence.
+1. single inheritence:- in this type of inheritence, a sub class inherits from only one super class.
+2. Multi-level inheritence:-In this type of inheritence, sub class inherits from a super class which is already sub class to another super class.
+    -> in this type of inheritence, one class acts as super class as well as sub class.
+3. Multiple inheritence:-In this type of inheritence, a sub-class inherited from more than 1 super class.java language doesn't support multiple inheritence.
+4. Hirarichal inheritence:- a super class is having more than 1 sub-class. this type of inheritence is widely used in developing project and it is used to achieve "generalisation".
+
+
+If we combine any of this 4 types of inheritence we get Hybrid inheritence.
+-> if a class is declared as final,then that class cannot have sub classes.
+-> by sing inheritence we can actieve 1. resuability
+                                      2. extensibility.
+                                      3. modification/enhancement. 
+--------- |
+Demo1     |
+--------- |
+========= |
+========= |
+========= |
+----------|
+
+Demo2
+
+
+
+
+java provides special keyword THIS which is used to accesss the current class, non-static members. 
+->THIS keyword always refers to the current class object.
+-> this keyword should be used only in the non-static function body or constructor.
+java provides another special keyword SUPER which is used to refer super class members in the sub class.
+-> SUPER keyword always refers to the immediate super() class. it should be used only in the non-static method body on constructor.
+NOTE:
+every class defined in java language must have a super class. Either defined by a programmer or defined by a compiler.
+-> if programmer doesn't defines a super class, then the complier defines "Object class" as super class.
+-> Object class is a root class in java language. every instances created in java language must have object class properties.
+
+CONSTRUCTOR CALLING :
+-> constructor of a class can make call to the another constructor of current class or to the constructor of super class.
+-> the constructor of the class can make a call to the current class constructor by using  this().
+-> the constructor of the sub-class can make a call to the constructor of super class by using  super().
+-> using this open close peranthesis a constructor can make call to either no-arguement constructor or parametarised constructor.
+-> call to the current class constructor should be done explicitly in  the code.
+->a constructor can call to the only one constructor at a time. Because more than one this() statement cannot be used.
+-> this() must be always the first statement of the constructor.
+-> the sub class constructor can make a call to the super class constructor either implicitly or explicitly.
+-> the implicit call is done by compiler whereas the explicit call should be done by programmer or code.
+-> the compiler makes the implecit call only if the super class is having no-arguement constructor.
+-> if the super class doesn't have 0 argument constroctor, then the sub-class should explicitly call the paramatrised constructor of super class
+-> java doesn't support multiple inheritence because:
+  1. the sub class constructor cannot make a call to super class constructor more than once. Because multiple super statement not allowed.
+  2. it leads to an ambiguity of "dimond problem".
+
+CONSTRUCTOR CHAINING:
+its a phenomenon where a chine of constructor executed during object creation.
+this happens more in inheritence program where sub-class constructor calls super class constructor, the super class constructor its super class constructor, and the call goes on upto super level constructor. 
+  
+EXAMPLE:
+
+class Sample{
+Sample(){
+System.out.println("running no-arguement constructior");
+}
+Sample(int arg){
+System.out.println("running parametarised constructor");
+System.out.println("arg value is " +arg);
+}
+}
+class Construct1{
+public static void main(String args[]){
+Sample s1 = new Sample();
+}
+}
+
+
+NOTE: java doesn't support recursive constructor calls.
+ 
+ eg:
+ class Demo2{
+ Demo2()
+ {
+ System.out.println("running demo2");
+ }
+ }
+class Demo1 extends Demo2{
+   Demo1{
+   System.out.println("running demo1")
+   }
+ class InheritSample{
+ public static void main(String args[]){
+ Demo1 d1 = new Demo1();
+ }
+ }  
+}
+
+eg2:
+ class Demo2{
+ Demo2()
+ {
+ System.out.println("running demo2");
+ }
+ }
+class Demo1 extends Demo2 {
+   Demo1(int args)
+   {
+   System.out.println("running demo1");
+   System.out.println("arg value is"+args);
+   }
+}
+class Demo0 extends Demo1 {
+   Demo0()
+   {
+	   super(7);
+   System.out.println("running demo0");
+   }
+}
+ class InheritSample{
+ public static void main(String args[]){
+ Demo0 d1 = new Demo0();
+ }
+ }
+ eg3:
+ class x{
+ int a;
+x(){
+a=10;
+}
+}
+class y extends x{
+
+int b;
+y(){
+y=20;
+}
+}
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+04-08-2016:
+
+METHOD OVERRIDING :
+
+Inheriting a method from a super class changing its implementation in the sub class accordingling to the sub class specification is known as METHOD OVERRIDING.
+-> method overriding should be done in the sub classes, is a relationship is mandotary for method overriding.
+-> while overriding the  superclass, the sub class should not change the declaration of the method, the sub-class has permission to change the method definition not the declaration. 
+-> folling methods of super class cannot be overrided in the sub class:
+     1. Static methods: because we cannot inherit it to the subclass.
+	 2. Final non-static method: Because the final keyword doesn't allow to modify the method in the sub-class, it can be inherited to   the     subclass.
+     3. Private non-static method: because it doesn't have access in the sub class.
+-> method overriding is used to achieve run time polymorphism.
+-> the sub-class can overload as well as override the method of super class.
+-> whenever we want to change the implementattion of already developed method then we go for method override.	 
+
+eG:
+
+class Demo1{
+ final void test(){
+ System.out.println("running demo1...");
+ }
+}
+class Demo2 extends Demo1{
+void test(){
+Syste.out.println("test function overrided");
+}
+}
+class Override{
+Demo2 d1 = new Demo2();
+d1.test();
+}
+
+PROGRAM FOR BOTH OVERLOADING AND OVERRIDING:
+eg:
+
+
+class Demo1{
+  private void test(){
+ System.out.println("running demo1...");
+ }
+}
+class Demo2 extends Demo1{
+ void test(){
+System.out.println("test function overrided");
+}
+void test(int ag){
+	System.out.println("Running 2nd test method");
+	System.out.println("arg value is "+ag);
+}
+}
+class Override{
+	public static void main(String args[]){
+Demo2 d1 = new Demo2();
+d1.test();
+d1.test(7);
+}
+}
+
+eg2:
+
+	class Demo1{
+	   void test(){
+	 System.out.println("running demo1...");
+	 }
+	}
+	class Demo2 extends Demo1{
+	 void test(){
+	System.out.println("test function overrided");
+	}
+	void test(int ag){
+		System.out.println("Running 2nd test method");
+		System.out.println("arg value is "+ag);
+	}
+	}
+	class Demo3 extends Demo2{
+	 void test(){
+		  super.test();
+	 System.out.println("running demo3...");
+	 }
+	}
+	class Override{
+		public static void main(String args[]){
+	Demo3 d1 = new Demo3();
+	d1.test();
+	d1.test(7);
+	}
+	}
+
+
+	
+	An object showing different behaviour at different stages of its life-cycle is known as polymorphisum.
+	=> there are 2 types : they are 1.compile time 
+	                                2.runtime
+in complie time, the method declaration is binded to the method definition by the complier.
+-> since it is binded at the time of compilation, we call it as early binding.
+once the binding is done at compile time, we cannot rebind it. Hence it is known as Static binding.  (Early/static)
+-> overloaded methods, static methods, private methods and fianl  methods are pointed by complier. hence, they are used to achieve compile time polymorphisium.
+-> in run-time polymorphisium, the method declaration is binded to the method definition by jvm at the time of execution.
+-> since the binding is done at execution time, it is known as late binding.
+-> the binding done by the jvm can be rebinded, hence it is claso called as Dynamic binding.
+Method overriding is an eg for run-time polymorhpisium. In case of run time binding the binding happens based on the object created.
+-> to achieve run-time polymorhpisium, we have to fulfill the folling concepts:
+     -> inheritence, 
+     -> method overriding.
+     -> class type casting.
+-> the advantage of polymorhpisium is :
+   1. we can acheve abstraction.
+   2. we can achieve gernalisation.
+   3. code modification and enhancement are easy.
+
+                                                              TYPE CASTING:
+   
+
+
+   
+   
+   
+   
+                                       |=>widining  ----   implecitly, explecitly
+                                       |
+                                       |=>Narrowing======= explicitly
+									   |
+                   |-> datatype casting|
+   Type casting:---
+                   |-> classtype casting|=> downcasting   => explicitly
+				                        |
+										|=> upcasting    =>implecitly, explicitly
+   
+   
+   casting one type of information to other type is known as TYPECASTING. In java, we  can perform 2 types of type-casting.
+           -> premetive tyep casting
+		   -> class type casting.
+	casting one type of data to other type is known as datatypecasting.
+It can be done in 2 ways.
+1. widining.
+2. narrowing.
+-> casting lower datatype to any of the higher datatype is known as widining. the widening operation can be done either implecitly or explecitly. the implecit widening is done by complier.
+-> casting from higher datatype to the lowerdatatype is known as narrowing. The narrowing should be done explecitly in the code whenever we proform narowing, there will be a precission loss.
+-> if the charactor is converted in to the int type then we get the ASCII representation of that character. similarlly if we convert int to char char representation of ASCII value.	
+   eg:
+   
+   int x=25;
+   double y =(double)x;
+   System.out.println(x);
+   
+   double j = 69.99;
+   int i = (int ) j ;
+   System.out.println(i);
+   
+   
+   eg1:
+   
+   String s1 ="java";
+   char[] chArr = s1.toCharArray();
+   for(int i=0; i<chArr.length;i++){
+      int x = chArr[i];
+	  char c = (char)(x-32);
+	  System.out.print(c);
+   }
+   
+   eg3:
+   class Demo1{
+    int x=10;
+	void test(){
+	System.out.println("running test....");
+	}
+   }
+   class Demo2{
+   double y=1.7;
+   void disp(){
+   System.out.println("running disp");
+   }
+   }
+   
+class ClassType2{
+public static void main(String [] args){
+Demo2 d1 = new Demo2();
+Demo1 d2 = (Demo1) d1;
+}
+}
+   
+   
+   
+   
+   -> casting one class type to other class type is known as class typecasting.
+   -> to perform class typecasting, the class must have "is a relationship".
+   -> the class typecastiung can be performed in two ways:
+                 -> upcasting 
+				 -> down casting.
+	-> casting sub class type to any level of super classtype is known as upcasting.
+    -> the upcasting can be done either implecitly or ecplicitly.
+    -> the implicit upcasting is doen by complier.
+    -> casting super class tpye to any level of sub-class type is known as downcasting. it should be done only on the object which is already upcasted.
+    -> for a reference varible we can assign the sub class object but we cannot assign its superclass object. In other words a super class reference variable can point or hold the object of subclasses but not the objects of its super class.	
+   06-08-2016:
+      
+   eg
+   
+   class Demo5{
+   int x=10;
+   void test(){
+   System.out.println("running test");
+   }
+   }
+   class Demo6 extends Demo5{
+   double y=9.8;
+   void disp(){
+   System.out.println("running disp");
+   }
+   }
+   class Demo7 extends Demo5{
+   char z='k';
+   void view(){
+   System.out.println("running view");
+   }
+   }
+   
+   Eg2:
+   class Demo5{
+   int x=10;
+   void test(){
+   System.out.println("running test");
+   }
+   }
+   class Demo6 extends Demo5{
+   double y=9.8;
+   void disp(){
+   System.out.println("running disp");
+   }
+   }
+   class Demo7 extends Demo5{
+   char z='k';
+   void view(){
+   System.out.println("running view");
+   }
+   }
+ class Sample1{
+ void useInterface(Demo5 arg1){
+ System.out.println(arg1.x);
+ arg1.test();
+ }
+ }
+ class Upcast{
+ public static void main(String [] args){
+ Sample1 s1 = new Sample1();
+ s1.useInterface(new Demo5());
+ s1.useInterface(new Demo6());
+ s1.useInterface(new Demo7());
+ }
+ }
+ ==>  if a function argument is a class type, while calling that function we can pass the instances of its subclass.
+ @@@@@@@@@@@@@@@@@@@@@@@@Total downcasting example of class to again upcast@@@@@@@@@@@@@@@@@@@@@@@
+ class Demo5{
+   int x=10;
+   void test(){
+   System.out.println("running test");
+   }
+   }
+   class Demo6 extends Demo5{
+   double y=9.8;
+   void disp(){
+   System.out.println("running disp");
+   }
+   }
+   class Demo7 extends Demo5{
+   char z='k';
+   void view(){
+   System.out.println("running view");
+   }
+   }
+ class Sample1{
+ void useInterface(Demo5 arg1){
+ System.out.println(arg1.x);
+ arg1.test();
+ if(arg1 instanceof Demo6){
+ Demo6 d1 = (Demo6) arg1;
+ System.out.println(d1.y);
+ d1.disp();
+ }
+ else if (arg1 instanceof Demo7 ){
+	 Demo7 d2 = (Demo7) arg1;
+	 System.out.println(d2.z);
+	 d2.view();
+ }
+ }
+ }
+ class Downcast{
+ public static void main(String [] args){
+ Sample1 s1 = new Sample1();
+ s1.useInterface(new Demo5());
+ s1.useInterface(new Demo6());
+ s1.useInterface(new Demo7());
+ }
+ }
+ 
+ 
+ if an object is having overrided method and if it is reffered by either super class reference variable or sub class reference then only overrided implementation should execute.
+ eg:
+ 
+ class x{
+void wish(){
+System.out.println("hi");
+}}
+class y extends x{
+void wish(){
+System.out.println("bye");
+}}
+class Eg2{
+public static void main(String[] args){
+x x1= new y();
+x1.wish();
+}}

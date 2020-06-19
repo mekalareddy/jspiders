@@ -1,0 +1,12 @@
+class Organization 
+{
+	String name;
+	Organization(String arg1)
+	{
+		name=arg1;
+	}
+	Department salesDept=new Department(1234,"Sales",60);
+	Department marketingDept=new Department(1234,"Marketing",50);
+	Department itDept=new Department(1234,"IT",40);
+
+}

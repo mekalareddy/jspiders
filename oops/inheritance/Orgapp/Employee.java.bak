@@ -1,0 +1,11 @@
+class Student 
+{
+	String name;
+	int id;
+	Student(int arg1, String arg2)
+	{
+		id=arg1;
+		name=arg2;
+
+	}
+}

@@ -1,0 +1,30 @@
+package com.jspiders.java;
+
+public class Employee 
+{
+	int eid;
+	String ename;
+	int esal;
+	String edesig;
+	String email;
+
+	public Employee(int eid, String name, int sal, String desig, String email) 
+	{
+		super();
+		this.eid = eid;
+		this.ename = name;
+		this.esal = sal;
+		this.edesig = desig;
+		this.email = email;
+	}
+	
+	public Employee(int eid2, String name, int sal, String desig, String email2)
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+	public String toString() 
+	{
+		return " ID Is : " +eid+ " NAME Is : " +ename+ " SAL Is : " + esal + "DESIG IS : " +edesig+ " EMAIL IS " +email;
+	}
+}

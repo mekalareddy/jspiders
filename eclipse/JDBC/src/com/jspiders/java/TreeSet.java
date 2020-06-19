@@ -1,0 +1,9 @@
+package com.jspiders.java;
+
+public class TreeSet implements Comparable
+{
+	TreeSet ts=new TreeSet();
+	ts.Sadd(new Students(101,"vijay",21.98));
+
+
+}

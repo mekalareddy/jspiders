@@ -1,0 +1,20 @@
+package com.jspiders.java;
+
+import java.util.ArrayList;
+
+public class Main 
+{
+
+	public static void main(String[] args)
+	{	   
+	    
+		ArrayList a1=new ArrayList();
+	    a1.add(new Employee(111,"Rakshit",45000,"Developer","Raki@gmail.com"));
+	    a1.add(new Employee(222,"Kaushik",70000,"Manager","Kaushik@gmail.com"));
+	    a1.add(new Employee(333,"Pruthvi",50000,"Manager","Pruthvi@gmail.com"));
+	    a1.add(new Employee(444,"Surendra",60000,"Developer","Suri@gmail.com"));
+	    a1.add(new Employee(444,"Sagar",80000,"Developer","Sagar@gmail.com"));
+	    a1.add(new Employee(444,"Govardhan",30000,"Manager","Gova@gmail.com"));
+	}
+
+}
